@@ -69,10 +69,10 @@ header nav li .current {
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    padding: 0 1em;
-    background: url("img/overlay.png"), url("img/sea-08-2.jpg") top center/cover fixed hsl(209, 75%, 65%);
+    padding: 0 5%;
+    background: url("img/overlay.png"), url("img/sea-08-blurred.jpg") top center/cover fixed hsl(209, 75%, 65%);
     text-align: center;
-    text-shadow: 0 1px 4px rgba(255,255,255, 0.8);
+    text-shadow: 0 1px 3px rgba(255,255,255, 0.75);
 }
 
 #banner h1 {
@@ -122,6 +122,11 @@ section {
     border-radius: 0 0 1rem 1rem;
     border-bottom: thin solid hsl(0, 0%, 88%);
     box-shadow: inset 0 -3px 5px hsla(0, 0%, 55%, 0.1);
+    /*
+    // new style to separate sections
+    border-bottom: 2px dotted white;
+    box-shadow: 0 1px 3px rgba(0,0,0, 0.15);
+    */
 }
 
 section:first-child { padding-top: 1.5em; }

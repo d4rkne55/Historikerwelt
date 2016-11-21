@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<title>Historikerwelt.de :: Altes Wissen für eine neue Welt</title>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="author" content="Dennis Jungbauer">
-<meta name="editor" content="PhpStorm 9.0.2">
-<link rel="stylesheet" href="normalize.css">
-<link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <title>Historikerwelt.de :: Altes Wissen für eine neue Welt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Dennis Jungbauer">
+    <meta name="editor" content="PhpStorm 9.0.2">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -164,19 +164,27 @@
         </ul>
         <small>&copy; 2010 - <?= date('Y') ?> by Tom Distler &ndash; All rights reserved</small>
     </footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="jquery.scrollStop.js"></script>
 <script src="jquery.onepage.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script>
 $(document).ready(function() {
     var headerHeight = $('header').height();
     $(window).scroll(function() {
-        if ($(window).scrollTop() + headerHeight +1 >= $('#ueber-mich').offset().top) {
-            if (!$('header').hasClass("section-area")) {
-                $('header').addClass("section-area");
+        var scrollPos = (document.documentElement.scrollTop || document.body.scrollTop);
+        var treshold = 1;
+        var $header = $('header');
+        var headerClassSet = $header.hasClass("section-area");
+
+        // if about me section is fully visible (#banner no more in viewport)
+        if ((scrollPos + headerHeight + treshold) >= document.getElementById('ueber-mich').offsetTop) {
+            if (!headerClassSet) {
+                $header.addClass("section-area");
             }
-        } else if ($('header').hasClass("section-area")) {
-            $('header').removeClass("section-area");
+        } else if (headerClassSet) {
+            $header.removeClass("section-area");
         }
     });
     $('nav.onepage a, #banner .btn').onepage(false, headerHeight);
