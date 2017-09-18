@@ -148,7 +148,8 @@
                 <p>Was wurde aus den beiden Abenteurern? John Lloyd Stephens arbeitete an Plänen zum Bau eines Nicaragua-Kanals, um Atlantik und Pazifik zu verbinden und an der Finanzierung einer Eisenbahnlinie durch Panama.
                    Er verstarb mit 46 Jahren (1852) während eines Heimaturlaubs an Malaria. Frederick Catherwood wurde vom Goldrausch in Kalifornien angezogen und verunglückte 1854 bei einem Schiffsunglück.</p>
                 <br>
-                <p class="remark">Sie interessieren sich für ehemalige Hochkulturen, Abenteuer und Reisen nach Ägypten, Mittel- und Südamerika?<br>Dann würde ich mich über einen Erfahrungsaustausch an <a href="mailto:historikerwelt@gmx.de">historikerwelt@gmx.de</a> sehr freuen.</p>
+                <p><em>Sie interessieren sich für ehemalige Hochkulturen, Abenteuer und Reisen nach Ägypten, Mittel- und Südamerika?<br>
+                       Dann würde ich mich über einen Erfahrungsaustausch an <a href="mailto:historikerwelt@gmx.de">historikerwelt@gmx.de</a> sehr freuen.</em></p>
             </article>
         </section>
         <section id="naturvoelker"></section>
