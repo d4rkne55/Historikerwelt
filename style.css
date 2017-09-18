@@ -67,7 +67,7 @@ header nav li {
 
 header nav a {
     color: inherit;
-    transition: all 0.2s ease-in;
+    transition: all 0.15s;
 }
 
 header nav .current {

@@ -188,6 +188,7 @@ $(document).ready(function() {
             $header.removeClass("section-area");
         }
     });
+
     $('nav.onepage a, #banner .btn').onepage(false, headerHeight);
 })
 </script>

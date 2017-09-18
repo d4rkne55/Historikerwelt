@@ -9,11 +9,13 @@ $.fn.onepage = function(scrollSpeed, navOffset) {
     $(window).on("load resize", function() {
         // clear array first
         sectionPos.length = 0;
+
         self.each(function() {
-            var elem = $(this).attr("href");
-            var offsetTop = Math.floor($(elem).offset().top);
+            var elemId = $(this).attr("href").substr(1);
+            var offsetTop = document.getElementById(elemId).offsetTop;
             sectionPos.push(offsetTop);
         });
+
         // remove the last item (about me section); no nav item
         var navSectionPos = sectionPos.slice(0, -1);
         var sections = navSectionPos.length;
@@ -21,13 +23,16 @@ $.fn.onepage = function(scrollSpeed, navOffset) {
         $(window).scrollStop(function() {
             // jQuery's $(window).scrollTop() is rather performance hungry, so the native way (in brackets)
             var scrollPos = (document.documentElement.scrollTop || document.body.scrollTop) + navOffset;
+
             for (var i=0; i < sections; i++) {
                 var navItem = self[i];
+
                 if (scrollPos >= navSectionPos[i] && scrollPos < navSectionPos[i+1]) {
                     // again, better not jQuery's class functions to optimize performance in an scroll event
                     if (navItem.className != "current") {
                         navItem.className = "current";
                     }
+
                     // leave for loop if current section is found
                     break;
                 } else if (navItem.className == "current") {
@@ -43,5 +48,6 @@ $.fn.onepage = function(scrollSpeed, navOffset) {
             $('html, body').animate({ scrollTop: sectionPos[i] - navOffset}, scrollSpeed, "easeInOutCubic");
         });
     });
+
     //return this;
 };
